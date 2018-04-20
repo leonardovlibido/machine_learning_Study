@@ -1,4 +1,4 @@
-Vim folding brush-up:
+﻿Vim folding brush-up:
 :set foldmethod=indent   // sakrij sve odgovore
 :set foldmethod=syntax   // prikaži sve odgovore
 
@@ -188,43 +188,43 @@ zc = fold close
 
 2.6.1 Čime se bavi statistička teorija učenja
     -
-	- STU se bavi proučavanjem moći generalizacije različitih skupova modela.
+    - STU se bavi proučavanjem moći generalizacije različitih skupova modela.
 
 2.6.2 Koja su osnovna pitanja koja se postavljaju u statičkoj teoriji učenja?
     -
-	- Koliki može biti stvarni rizik modela, ako znamo njegov empirijski rizik.
-	- Koliko je stvarni rizik modela f viši od stvarnog rizika najboljeg modela iz nekog skupa modela.
-	- Koliko je stvarni rizik modela f viši od stvarnog rizika najboljeg mogućeg modela.
+    - Koliki može biti stvarni rizik modela, ako znamo njegov empirijski rizik.
+    - Koliko je stvarni rizik modela f viši od stvarnog rizika najboljeg modela iz nekog skupa modela.
+    - Koliko je stvarni rizik modela f viši od stvarnog rizika najboljeg mogućeg modela.
 	
 2.6.3 Od čega sve zavisi gornja granica stvarnog rizika u odnosu na neki model f?
     -
-	- Od empirijskog rizika modela f, veličine skupa podataka i skupa modela iz kojeg se bira f.
+    - Od empirijskog rizika modela f, veličine skupa podataka i skupa modela iz kojeg se bira f.
 
 2.6.4 Šta nam govori hefdingova nejednakost?
     -
-	- Hefdingova nejednakost nam kvantifikuje brzinu konvergencije empirijskog rizika nekog modela ka njegovom stvarnom riziku.
+    - Hefdingova nejednakost nam kvantifikuje brzinu konvergencije empirijskog rizika nekog modela ka njegovom stvarnom riziku.
 
 2.6.5 Šta predstavlja funkcija rasta?
     -
-	- Funkcija rasta je maksimalan broj načina da funkcije iz skupa F klasifikuju N tačaka.
+    - Funkcija rasta je maksimalan broj načina da funkcije iz skupa F klasifikuju N tačaka.
 
 
 2.6.6 Šta predstavlja Vapnik-Červonenkisova dimenzija skupa funkcija F?
     -
-	- VC dimenzija skupa funkcija F je najveći broj N, za koji postoji skup tačaka veličine N koje se mogu klasifikovati pomoću skupa funkcija F na sve moguće načine.
+    - VC dimenzija skupa funkcija F je najveći broj N, za koji postoji skup tačaka veličine N koje se mogu klasifikovati pomoću skupa funkcija F na sve moguće načine.
 
 2.6.7 Koja je VC dimenzija skupa svih pravih u prostoru?
     -
-	- 2, ako se tačka nalazi na pravoj onda pripada jednoj klasi, drugoj u suprotnom.
+    - 2, ako se tačka nalazi na pravoj onda pripada jednoj klasi, drugoj u suprotnom.
 	
 2.6.8 Dati primer skupa funkcija koji ima beskonačnu VC dimenziju.
     -
-	- {sgn(sin(wx)) | w in R}
-	- SVM sa gausovim kernelom
+    - {sgn(sin(wx)) | w in R}
+    - SVM sa gausovim kernelom
 
 2.6.9 Kakav treba da bude skup modela, da bi dovoljno velik broj podataka garantovao poverenje u empirijsku ocenu stvarnog rizika?
     -
-	- Skup modela treba biti konačne VC dimenzije.
+    - Skup modela treba biti konačne VC dimenzije.
 
 ===========================================================================
 2.7 Veza statističke teorije učenja sa filozofijom nauke
@@ -232,7 +232,7 @@ zc = fold close
 
 2.7.1 Koje je najbolje objašnjenje neke pojave u smislu Okamove oštrice?
     -
-	- Ono koje pored objašnjenja te pojave, objašnjava što manje.
+    - Ono koje pored objašnjenja te pojave, objašnjava što manje.
 
 ===========================================================================
 2.8 Vrste modela
@@ -240,9 +240,9 @@ zc = fold close
 
 2.8.1 Koje vrste modela postoje, prema tome koliku količinu informacije pokušavaju da modeluju?
     -
-	- Probabilistički generativni
-	- Probabilistički diskriminativni
-	- Neprobabilistički diskriminativni
+    - Probabilistički generativni
+    - Probabilistički diskriminativni
+    - Neprobabilistički diskriminativni
 
 2.8.2 Šta pokušavaju da modeluju probabilistički generativni modeli?
     -
