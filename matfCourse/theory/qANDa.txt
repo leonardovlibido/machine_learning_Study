@@ -62,7 +62,7 @@ zc = fold close
 
 2.0.6 Šta su kategoričke promenljive?
     -
-    - Kategoričke promenljive imaju konačan broj različitih vrednosti koji mogu da uzmu, i ne mogu se urediti.
+    - Kategoričke promenljive imaju konačan broj različitih vrednosti koje mogu da uzmu, i ne mogu se urediti.
 
 ===========================================================================
 ## 2.1 Postavka problema nadgledanog učenja
@@ -144,19 +144,20 @@ zc = fold close
 
 2.3.1 Objasniti pojam preprilagođavanja.
     -
-    - TODO
+    - Preprilagođavanje predstavlja prilagođavanje modela podacima u toj meri, da se gubi moć generalizacije.
+    - Za model kažemo da preprilagođava ako pravi malu grešku na trening skupu, a veliku grešku na podacima koji do tada nisu viđeni, što takođe znači da model loše generalizuje.
 
 2.3.2 Da li je minimizacija srednje greške jedini i najbolji kriterijum za procenu kvaliteta modela? Obrazložiti odgovor.
     -
-    - TODO
+    - Zavisi na kojim podacima se vrši. Ako procenjujemo grešku nad podacima nad kojim učimo, preprilagođavanje podacima može uticati na ocenu.
 
 2.3.3 Koji sve mogu biti razlozi preprilagođavanja?
     -
-    - TODO
+    - Preprilagođavanje može biti posledica učenja šuma trening skupa, ili učenja specifičnosti podataka koji nisu suštinski bitni za određivanje ciljne promenljive.
     
 2.3.4 Kako se rešava problem preprilagođavanja?
     -
-    - TODO
+    - Uvođenjem regularizacionog izraza, time menjajući model koji se uči.
 
 ===========================================================================
 ## 2.4 Regularizacija
@@ -172,9 +173,10 @@ zc = fold close
 
 2.4.3 Navedite primer regularizacionog izraza.
     -
-    - Lnorme, menhetn, euklidsko
+    - Lnorme, laso(menhetn), euklidsko
 
-2.4.4 Kako se utiče na model regularizacioni parametar u svojim ekstremnim vrednostima.
+2.4.4 Kako na model utiče regularizacioni parametar u svojim ekstremnim vrednostima.
+    -
     - kad je 0, uopšte ne utiče, tako da ako je model dovoljno fleksibilan može doći do preprilagođavanja.
     - ako teži beskonačnosti, samo on i utiče na minimizaciju, tako da model u potpunosti gubi moć prilagođavanja, jedino mu je bitno da svi parametri imaju vrednosti 0.
 
@@ -204,10 +206,12 @@ zc = fold close
 
 
 2.5.3 Kako možemo uticati na fleksibilnost modela?
+    -
     - Regularizacijom, tačnije menjanjem regularizacionog parametra.
 
 2.5.4 Šta predstavlja nagodba između sistematsog odstupanja i varijanse?
-    - Smanjivanje varijanse i pritom povećavanje sistematskog odstupanja u zavisnosti od izabrane vrednosti regularizacionog parametra.
+    -
+    - Smanjivanje varijanse i pritom povećavanje sistematskog odstupanja u zavisnosti od izabrane vrednosti regularizacionog parametra, čime smanjujemo preprilagođavanje modela i povećavamo njegovu moć generalizacije.
 
 ===========================================================================
 ## 2.6 Teorijske garancije kvaliteta garanije
@@ -282,10 +286,10 @@ zc = fold close
 
 2.8.4 Šta pokušavaju da modeluju neprobabilistički diskriminativni modeli?
     -
-    - Funkciju f(x) = y, kojom se mogu vršiti samo predviđanja ciljne promenljive, bez proceni pouzdanosti datog predviđanja.
+    - Funkciju f(x) = y, kojom se mogu vršiti samo predviđanja ciljne promenljive, bez procene pouzdanosti datog predviđanja.
 
 
-2.8.5 Koje su dimenzije dizajna algoritama nadgeldanog učenja?
+2.8.5 Koje su dimenzije dizajna algoritama nadgledanog učenja?
     - 
     - Vrsta modela
     - Forma modela
@@ -309,6 +313,7 @@ zc = fold close
     - Osnovna pretpostavka je da se funkcija raspodele ciljne promenljive za date atribute može aproksimirati normalnom raspodelom.
 
 3.1.2 Da li je uvek pametno verovati oceni greške linearne regresiji, ako ne zašto?
+    -
     - Ne, zbog potencijalnog preprilagođavanja.
 
 3.1.3 Koji su problemi sa algebarskim rešenjem problema linearne regresije?
@@ -332,6 +337,7 @@ zc = fold close
     - Binarnim kodiranjem se kategoričke promenljive transformišu u numeričke. Za C različitih kategorija se pravi C-1 binarna promenljiva, svakoj kategoriji odgovara različita kombinacija. Za svaku kombinaciju važi da u sebi sadrži najviše jednu jedinicu.
 
 3.1.8 Zašto se pri binarnom kodiranju jedna kategorija definiše na specijalan način, sa svim nulama, a ne kao još jedna dodatna promenljiva?
+    -
     - U tom slučaju bi svuda postojala tačno jedna jedinica, pa bi te kolone bile zavisne sa slobodnim članom koji se gleda kao kolona jedinica koja se množi parametrom, što vodi neinvertabilnosti matrice transpose(X)*X.
 
 3.1.9 Koje su mane kod linearne regresije?
@@ -346,7 +352,6 @@ zc = fold close
 ## 3.2 Logistička regresija
 ===========================================================================
 
-
 3.1.1 Koja je osnovna pretpostavka logističke regresije sa probabilističkog gledišta?
     -
     - Osnovna pretpostavka je da se funkcija raspodele ciljne promenljive za date atribute može aproksimirati bernulijevom raspodelom.
@@ -358,11 +363,12 @@ zc = fold close
 
 3.1.3 Kako glasi sigmoidna funkcija?
     -
-    - sig(t) = 1/( 1 - exp(-t) )
+    - sig(t) = 1/( 1 + exp(-t) )
 
 
-3.1.4 Kako glasi funkciaj greške unakrsna entropija?
-    - L(u, v) = -u*log(v) - (1-u)*(1-log(1-v))
+3.1.4 Kako glasi funkcija greške unakrsna entropija?
+    - 
+    - L(u, v) = -u*log(v) - (1-u)*log(1-v)
 
 
 ===========================================================================
