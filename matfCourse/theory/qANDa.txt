@@ -7,8 +7,11 @@ zo = fold open
 zc = fold close
 
 
+
 ===========================================================================
-# 1 Uvod:
+===========================================================================
+# 1 Uvod
+===========================================================================
 ===========================================================================
 
 1.1 Šta je mašinsko učenje, opisati svojim rečima?
@@ -32,7 +35,9 @@ zc = fold close
     -
 
 ===========================================================================
+===========================================================================
 # 2. Nadgledano učenje
+===========================================================================
 ===========================================================================
 
 2.0.1 Šta je model?
@@ -134,27 +139,27 @@ zc = fold close
     - L(u|v) = I(u=/=v)
     
 ===========================================================================
-2.3 Preprilagođavanje
+## 2.3 Preprilagođavanje
 ===========================================================================
 
 2.3.1 Objasniti pojam preprilagođavanja.
     -
-    -
+    - TODO
 
 2.3.2 Da li je minimizacija srednje greške jedini i najbolji kriterijum za procenu kvaliteta modela? Obrazložiti odgovor.
     -
-    -
+    - TODO
 
 2.3.3 Koji sve mogu biti razlozi preprilagođavanja?
     -
-    -
+    - TODO
     
 2.3.4 Kako se rešava problem preprilagođavanja?
     -
-    -
+    - TODO
 
 ===========================================================================
-2.4 Regularizacija
+## 2.4 Regularizacija
 ===========================================================================
 
 2.4.1 Šta predstavlja regularizacija?
@@ -177,13 +182,35 @@ zc = fold close
     -
     - Dap, ako previše regularizujemo model u potpunosti gubi mogućnost prilagođavanja.
 
+2.4.6 Da li regularizacija kod velike količine podataka dobro ili loše utiče na model?
+    -
+    - Loše, regularizacija u ovom slučaju onemogućuje modelu da se dovoljno prilagodi podacima.
 
 ===========================================================================
-2.5 Nagodba između sistematskog odstupanja i varijanse
+## 2.5 Nagodba između sistematskog odstupanja i varijanse
 ===========================================================================
 
+2.5.1 Šta je sistematsko odstupanje
+    -
+    - Sistematsko odstupanje je razlika između onoga što treba oceniti i očekivanja onoga čime se ocena vrši.
+    - Sistematsko odstupanje je konstantno odstupanje procenjene ciljne promenljive od njene stvarne vrednosti, koju model pravi nezavisno od uzorka nad kojim uči.
+    - Veliko sistematsko odstupanje je dobar znak da je došlo do lošeg prilagođavanja(underfitting)
+
+2.5.2 Šta je varijansa
+    -
+    - Varijansa predstavlja grešku zbog osetljivosti modela na male promene u uzorku nad kojim uči.
+    - Varijansa kvantifikuje koliko se model može razlikovati u zavisnosti od uzorka nad kojim uči.
+    - Velika varijansa je dobar znak da je došlo do preprilagođavanja(overfitting)
+
+
+2.5.3 Kako možemo uticati na fleksibilnost modela?
+    - Regularizacijom, tačnije menjanjem regularizacionog parametra.
+
+2.5.4 Šta predstavlja nagodba između sistematsog odstupanja i varijanse?
+    - Smanjivanje varijanse i pritom povećavanje sistematskog odstupanja u zavisnosti od izabrane vrednosti regularizacionog parametra.
+
 ===========================================================================
-2.6 Teorijske garancije kvaliteta garanije
+## 2.6 Teorijske garancije kvaliteta garanije
 ===========================================================================
 
 2.6.1 Čime se bavi statistička teorija učenja
@@ -227,7 +254,7 @@ zc = fold close
     - Skup modela treba biti konačne VC dimenzije.
 
 ===========================================================================
-2.7 Veza statističke teorije učenja sa filozofijom nauke
+## 2.7 Veza statističke teorije učenja sa filozofijom nauke
 ===========================================================================
 
 2.7.1 Koje je najbolje objašnjenje neke pojave u smislu Okamove oštrice?
@@ -235,7 +262,7 @@ zc = fold close
     - Ono koje pored objašnjenja te pojave, objašnjava što manje.
 
 ===========================================================================
-2.8 Vrste modela
+## 2.8 Vrste modela
 ===========================================================================
 
 2.8.1 Koje vrste modela postoje, prema tome koliku količinu informacije pokušavaju da modeluju?
@@ -246,14 +273,124 @@ zc = fold close
 
 2.8.2 Šta pokušavaju da modeluju probabilistički generativni modeli?
     -
-    -
+    - Zajedničku raspodelu datu gustinom p(x,y), koja opisuje zavisnosti između atributa i ciljne promenljive ali i međuzavisnosti između atributa.
+    - Mogu se vršiti predviđanja, izračunati pouzdanost predviđanja, generacija instanci.
 
 2.8.3 Šta pokušavaju da modeluju probabilistički diskriminativni modeli?
     -
-    -
+    - Uslovnu raspodelu datu gustinom p(y|x), opisuje samo zavisnost ciljne promeljive od atributa. Takođe se može proceniti pouzdanost predviđanja uz naravno predviđanje ciljne promenljive.
 
 2.8.4 Šta pokušavaju da modeluju neprobabilistički diskriminativni modeli?
     -
+    - Funkciju f(x) = y, kojom se mogu vršiti samo predviđanja ciljne promenljive, bez proceni pouzdanosti datog predviđanja.
+
+
+2.8.5 Koje su dimenzije dizajna algoritama nadgeldanog učenja?
+    - 
+    - Vrsta modela
+    - Forma modela
+    - Funkcija greške
+    - Regularizacija
+    - Optimizacioni algoritam
+
+
+===========================================================================
+===========================================================================
+# 3 Probabilistički modeli
+===========================================================================
+===========================================================================
+
+===========================================================================
+## 3.1 Linearna regresija
+===========================================================================
+
+3.1.1 Koja je osnovna pretpostavka linearne regresije sa probabilističkog gledišta?
     -
+    - Osnovna pretpostavka je da se funkcija raspodele ciljne promenljive za date atribute može aproksimirati normalnom raspodelom.
+
+3.1.2 Da li je uvek pametno verovati oceni greške linearne regresiji, ako ne zašto?
+    - Ne, zbog potencijalnog preprilagođavanja.
+
+3.1.3 Koji su problemi sa algebarskim rešenjem problema linearne regresije?
+    -
+    - Matrica ne transpose(X)*X nije nužno invertabilna, čak i ako jeste, moguće je da je loše uslovljena. Još veći problem je što inverz matrice može biti izuzetno skup, posebno za visokodimenzionalne podatke sa velikim brojem instanci.
+
+3.1.4 Kako se rešava problem neinvertabilnosti i loše uslovljenosti matrice transpose(X)*X kod algebarskog rešenja linearne regresije?
+    -
+    - Regularizacijom.
+
+3.1.5 Kako se rešava problem izuzetno skupe inverzije za visokodimenzionalnu matricu transpose(X)*X kod algebarskog rešenja linearne regresije?
+    -
+    - Prelaskom na gradijentni spust.
+
+3.1.6 Koji su preduslovi da bi linearan model bio intepretabilan
+    -
+    - model bi trebalo da ima malu grešku
+    - podaci bi trebalo da budu standardizovani, kako bi bilo lakše uočiti koliko koji atribut utiče
+
+3.1.7 Šta je binarno kodiranje(dummy codding)?
+    - Binarnim kodiranjem se kategoričke promenljive transformišu u numeričke. Za C različitih kategorija se pravi C-1 binarna promenljiva, svakoj kategoriji odgovara različita kombinacija. Za svaku kombinaciju važi da u sebi sadrži najviše jednu jedinicu.
+
+3.1.8 Zašto se pri binarnom kodiranju jedna kategorija definiše na specijalan način, sa svim nulama, a ne kao još jedna dodatna promenljiva?
+    - U tom slučaju bi svuda postojala tačno jedna jedinica, pa bi te kolone bile zavisne sa slobodnim članom koji se gleda kao kolona jedinica koja se množi parametrom, što vodi neinvertabilnosti matrice transpose(X)*X.
+
+3.1.9 Koje su mane kod linearne regresije?
+    -
+    - Pretpostavka nezavisnosti atributa, pretpostavka konstantne varijanse, potencijalna neadekvatnost linearne forme, preveliki uticaj odudarajućih vrednosti(outliera).
+
+3.1.10 Koje su prednosti linearne regresije?
+    -
+    - Jednostavnost modela, brzina treniranja, interpretabilnost.
+
+===========================================================================
+## 3.2 Logistička regresija
+===========================================================================
 
 
+3.1.1 Koja je osnovna pretpostavka logističke regresije sa probabilističkog gledišta?
+    -
+    - Osnovna pretpostavka je da se funkcija raspodele ciljne promenljive za date atribute može aproksimirati bernulijevom raspodelom.
+
+
+3.1.2 Zašto se ne može koristiti linearni model zavisnosti između parametra h i vrednosti atributa x kod logističke regresije?
+    -
+    - Zato što parametar h modelira verovatnoću, tako da se mora nalaziti u intervalu od 0 do 1, dok x pripada intervalu od -inf do inf.
+
+3.1.3 Kako glasi sigmoidna funkcija?
+    -
+    - sig(t) = 1/( 1 - exp(-t) )
+
+
+3.1.4 Kako glasi funkciaj greške unakrsna entropija?
+    - L(u, v) = -u*log(v) - (1-u)*(1-log(1-v))
+
+
+===========================================================================
+## 3.3 Multinomijalna logistička regresija
+===========================================================================
+
+===========================================================================
+## 3.4 Uopšteni linearni modeli
+===========================================================================
+
+===========================================================================
+## 3.5 Naivni Bajesov algoritam
+===========================================================================
+
+===========================================================================
+===========================================================================
+# 4 Modeli zasnovani na širokom pojasu
+===========================================================================
+===========================================================================
+
+===========================================================================
+===========================================================================
+# 5 Modeli zasnovani na instancama
+===========================================================================
+===========================================================================
+
+===========================================================================
+===========================================================================
+# 6 Evaluacija i izbor modela
+===========================================================================
+===========================================================================
