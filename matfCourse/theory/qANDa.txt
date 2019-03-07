@@ -87,7 +87,7 @@ zc = fold close
 2.1.5 Šta je funkcional rizika ili stvarni rizik? Navesti formulu u opštem slučaju.
     -
     -
-    
+
 2.1.6 Iz kojih razloga je nemoguće direktno rešiti problem nadgledanog učenja u svom teorijskom obliku?
     -
     - Ne znamo zajedniču raspodelu verovatnoća atributa i ciljne promenljive. Skup funkcija po kojem minimizujemu stvarni rizik je beskonačan.
@@ -123,7 +123,7 @@ zc = fold close
 
 2.2.7 Navesti funkciju greške kod regresije koja se najčešće koristi.
     -
-    - L(u,v) = (u-v)^2   
+    - L(u,v) = (u-v)^2
     - kvadratna greška
 
 2.2.8 Kako glasi formulacija principa minimizacije empirijskog rizika za regresiju?
@@ -137,7 +137,7 @@ zc = fold close
 2.2.10 Navesti funkciju greške kod klasifikacije.
     -
     - L(u|v) = I(u=/=v)
-    
+
 ===========================================================================
 ## 2.3 Preprilagođavanje
 ===========================================================================
@@ -154,7 +154,7 @@ zc = fold close
 2.3.3 Koji sve mogu biti razlozi preprilagođavanja?
     -
     - Preprilagođavanje može biti posledica učenja šuma trening skupa, ili učenja specifičnosti podataka koji nisu suštinski bitni za određivanje ciljne promenljive.
-    
+
 2.3.4 Kako se rešava problem preprilagođavanja?
     -
     - Uvođenjem regularizacionog izraza, time menjajući model koji se uči.
@@ -226,7 +226,7 @@ zc = fold close
     - Koliki može biti stvarni rizik modela, ako znamo njegov empirijski rizik.
     - Koliko je stvarni rizik modela f viši od stvarnog rizika najboljeg modela iz nekog skupa modela.
     - Koliko je stvarni rizik modela f viši od stvarnog rizika najboljeg mogućeg modela.
-	
+
 2.6.3 Od čega sve zavisi gornja granica stvarnog rizika u odnosu na neki model f?
     -
     - Od empirijskog rizika modela f, veličine skupa podataka i skupa modela iz kojeg se bira f.
@@ -247,7 +247,7 @@ zc = fold close
 2.6.7 Koja je VC dimenzija skupa svih pravih u prostoru?
     -
     - 2, ako se tačka nalazi na pravoj onda pripada jednoj klasi, drugoj u suprotnom.
-	
+
 2.6.8 Dati primer skupa funkcija koji ima beskonačnu VC dimenziju.
     -
     - {sgn(sin(wx)) | w in R}
@@ -290,7 +290,7 @@ zc = fold close
 
 
 2.8.5 Koje su dimenzije dizajna algoritama nadgledanog učenja?
-    - 
+    -
     - Vrsta modela
     - Forma modela
     - Funkcija greške
@@ -367,7 +367,7 @@ zc = fold close
 
 
 3.1.4 Kako glasi funkcija greške unakrsna entropija?
-    - 
+    -
     - L(u, v) = -u*log(v) - (1-u)*log(1-v)
 
 
@@ -375,13 +375,16 @@ zc = fold close
 ## 3.3 Multinomijalna logistička regresija
 ===========================================================================
 
+
 ===========================================================================
 ## 3.4 Uopšteni linearni modeli
 ===========================================================================
 
+
 ===========================================================================
 ## 3.5 Naivni Bajesov algoritam
 ===========================================================================
+
 
 ===========================================================================
 ===========================================================================
@@ -389,14 +392,81 @@ zc = fold close
 ===========================================================================
 ===========================================================================
 
+
+===========================================================================
+===========================================================================
+# 6 Ansambli
+===========================================================================
+===========================================================================
+
+
 ===========================================================================
 ===========================================================================
 # 5 Modeli zasnovani na instancama
 ===========================================================================
 ===========================================================================
 
+
 ===========================================================================
 ===========================================================================
-# 6 Evaluacija i izbor modela
+# 7 Evaluacija i izbor modela
 ===========================================================================
 ===========================================================================
+
+
+===========================================================================
+===========================================================================
+# 8 Regularizacija
+===========================================================================
+===========================================================================
+
+
+===========================================================================
+===========================================================================
+# 9 Optimizacija
+===========================================================================
+===========================================================================
+
+8.0.1 Čime se bavi matematička optimizacija
+
+8.0.2 Opisati robins-moorove uslove za izbor duzine koraka kod gradijentnog spusta.
+
+8.0.2 Navesti i objasniti najčešće kriterijume zaustavljanja kod gradijentnog spusta.
+
+
+
+===========================================================================
+===========================================================================
+# 10 Neuronske mreže i duboko učenje
+===========================================================================
+===========================================================================
+
+
+===========================================================================
+===========================================================================
+# 11 Šta ako ne radi?
+===========================================================================
+===========================================================================
+
+
+===========================================================================
+===========================================================================
+# 12 Markovljevi procesi odlučivanja i njihovo rešavanje
+===========================================================================
+===========================================================================
+
+
+===========================================================================
+===========================================================================
+# 13 Učenje u nepoznatom okruženju
+===========================================================================
+===========================================================================
+
+
+===========================================================================
+===========================================================================
+# 14 Matematičko predznanje
+===========================================================================
+===========================================================================
+
+
